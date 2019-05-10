@@ -1,0 +1,28 @@
+bridge_len: 9
+gameover_at_deadend: True
+rendering: False
+test: False
+
+nb_experiments: 1
+random_seed: 1234
+nb_episodes: 1000
+printing_period: 100  # episodes, after which print on the screen
+writing_period: 100   # episodes, after which capture a data-point (averaged over this window)
+saving_period: 1000   # episodes, after which save on the disk (a bit time-consuming)
+episode_max_len: 250
+folder_location: '/results/'
+folder_name: 'bridge_'
+
+explore_method: secure  # either of `secure` | `egreedy` | `softmax` | `count`
+target_eval: True  # True: greedy target is evaluated `nb_eval` times; False: training with exploration is reported
+nb_eval: 10
+
+init_q: 0.0
+gamma: 0.99
+alpha: 0.001
+epsilon: 0.1 # use 0.4 for e-greedy
+annealing: False
+final_epsilon: 0.0
+annealing_start_episode: 550
+annealing_episodes: 50
+learning_method: ql

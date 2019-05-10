@@ -1,0 +1,56 @@
+rom_path: './aleroms/'
+game_name: 'montezuma_revenge'
+state_shape: [84, 84]
+frame_skip: 4
+repeat_action_probability: 0.0
+rendering: False
+random_seed: 5678
+
+num_experiments: 1
+num_epochs: 200
+is_learning: True
+steps_per_epoch: 250000
+max_start_nullops: 30
+is_testing: True
+steps_per_test: 1000  # 125000
+episode_max_len: 8000
+folder_location: './results/'
+folder_name: 'secure_dqn_'
+test: False
+human: False
+
+epsilon: 1.0
+annealing: True
+final_epsilon: .1
+annealing_start: 2000000   # 8 epochs of fully secure rw to train explore AI
+annealing_steps: 1000000
+
+secure: True  # secure exploration
+max_secure: False  # to use `q_threshold` on greedy actions
+q_threshold: -0.4
+exploration_learning_steps: 2000000
+exploit_network_size: 'large'
+explore_network_size: 'large'
+exploit_rewarding_buffer_size: 20
+explore_rewarding_buffer_size: 200
+use_exploit_btstrap_corr: False
+use_expl_inc: False
+ddqn: True
+gamma: 0.99
+over_cost: 1.0
+learning_rate: 0.000125
+minibatch_size: 32
+history_len: 4
+replay_max_size: 1000000
+replay_min_size: 50000
+rescale_reward: False
+reward_divider: 1.0
+reward_min: -1.0
+reward_max: 1.0
+learning_frequency: 4
+update_freq: 2500 #every 2500 learning steps (10000 total steps)
+grad_clip: 1
+action_dim: 1
+reward_dim: 1
+normalize: 255.
+
